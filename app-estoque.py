@@ -41,6 +41,7 @@ produtos = [
 # ➕ Adiciona novos produtos à lista existente
 produtos.append(Produto(4, "Marcador", "Papelaria", 80, 4.75, "Pilot"))
 produtos.append(Produto(5, "Grampeador", "Escritório", 30, 22.90, "Tramontina"))
+produtos.append(Produto(6, "Caneta Azul", "Papelaria", 60, 2.80, "Compactor"))
 
 # 🔎 Função para listar produtos com preço acima de R$10
 def listar_produtos_acima_de_10():
@@ -48,6 +49,15 @@ def listar_produtos_acima_de_10():
     for produto in produtos:
         if produto.preco > 10:
             print(produto)
+            
+
+# ✏️ Função para alterar o preço de um produto existente
+def alterar_preco(nome_produto, novo_preco):
+    for produto in produtos:
+        if produto.nome == nome_produto:
+            produto.preco = novo_preco
+            return f"✅ Preço do produto '{nome_produto}' atualizado para R${novo_preco:.2f}"
+    return f"❌ Produto '{nome_produto}' não encontrado."
 
 # 🧬 Serializa os produtos para JSON e exibe no terminal
 json_produtos = json.dumps([p.to_dict() for p in produtos], indent=4)
@@ -99,3 +109,6 @@ conn.close()
 
 # 🧪 Teste da função de filtro por preço
 listar_produtos_acima_de_10()
+
+# 🧪 Teste da função de alteração de preço
+print(alterar_preco("Caneta Azul", 3.00))
