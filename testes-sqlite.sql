@@ -1,5 +1,9 @@
 -- Remove tabela demo (exemplo inicial) do SQLite
 DROP TABLE demo;
+
+-- Ativar suporte a chaves estrangeiras
+PRAGMA foreign_keys = ON;
+
 -- Criação da tabela de Clientes
 CREATE TABLE Clientes (
 ClienteID INTEGER PRIMARY KEY,
@@ -17,6 +21,7 @@ FOREIGN KEY (ClienteID) REFERENCES Clientes (ClienteID)
 -- Inserção de dados em Clientes
 INSERT INTO Clientes (Nome) VALUES ('Ana');
 INSERT INTO Clientes (Nome) VALUES ('Bruno');
+
 -- Inserção de dados em Pedidos
 INSERT INTO Pedidos (ClienteID, DataPedido) VALUES (1, '2026-04-06');
 INSERT INTO Pedidos (ClienteID, DataPedido) VALUES (2, '2026-04-07');
