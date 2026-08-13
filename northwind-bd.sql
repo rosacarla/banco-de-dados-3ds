@@ -2,7 +2,7 @@
 --  CREATE DATABASE Northwind;
 -- USE Northwind;
 
--- Apaga tabela demonstratva do editor SQLite Online
+-- Apaga tabela demonstrativa do editor SQLite Online
 DROP TABLE demo;
 
 CREATE TABLE Suppliers (
